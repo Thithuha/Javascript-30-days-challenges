@@ -7,6 +7,8 @@
 </head>
 
 <body>
+  <p><em>Please check out the JavaScript Console</em> 💁</p>
+
   <script>
     const inventors = [
       { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
@@ -26,10 +28,21 @@
       return true; //keep it
     }
   });
-  console.table(fifteen); // data will present inside table with column
+  console.table(fifteen); // data will display inside column table
 
+  // 2. Give us an array of the inventor first and last names
+  const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+  console.table(fullNames);
 
-
+  // 3. Sort the inventors by birthdate, oldest to youngest
+  const ordered = inventors.sort(function(firstPerson, secondPerson){
+    if (firstPerson.year > secondPerson.year) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+  console.table(ordered);
 
 
   </script>
